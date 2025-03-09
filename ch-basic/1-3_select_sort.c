@@ -6,6 +6,7 @@
 #define COMPARE(x, y) ((x) < (y) ? -1 : ((x) == (y) ? 0 : 1))
 
 void sort(int[], int);
+int binsearch(int[], int, int, int);
 
 void main(void)
 {
@@ -23,7 +24,7 @@ void main(void)
 
     for (i = 0; i < n; i++)
     {
-        list[i] = rand() % 1000;
+        list[i] = rand() % 100;
         printf("%d ", list[i]);
     }
 
@@ -33,6 +34,11 @@ void main(void)
         printf("%d ", list[i]);
 
     printf("\n");
+
+    printf("What you want to find? ");
+    scanf("%d", &n);
+
+    printf("The number %d is at index %d\n", n, binsearch(list, n, 0, n - 1));
 }
 
 int binsearch(int list[], int searchnum, int left, int right)
